@@ -2,7 +2,7 @@
 React + TypeScript + Firebase + MaterialUI で圏論クイズのwebアプリを作成しました。
 
 アプリのURL: https://ct-quiz-demo.web.app \
-アプリの紹介ページ: https://quiz-site-4671f.web.app/ \
+アプリの紹介ページ: https://quiz-site-4671f.web.app/ 
 
 実装機能：\
 ・認証機能\
