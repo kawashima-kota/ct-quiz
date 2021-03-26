@@ -1,0 +1,14 @@
+.content{
+  text-align: center;
+	display: block;
+}
+
+.content p{
+  text-align: left;
+	display: inline-block;
+}
+
+.content li{
+  text-align: left;
+}
+

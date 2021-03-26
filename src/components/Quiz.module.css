@@ -1,0 +1,31 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+  align-content: left;
+}
+
+.next{
+  align-content: center;
+}
+
+.trans{
+  align-content: center;
+  opacity: 0.5;
+}
+
+.dummy{
+  opacity: 0.0;
+}
+
+.content{
+  text-align: center;
+	display: block;
+}
+
+.content span{
+  text-align: left;
+	display: inline-block;
+}

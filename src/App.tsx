@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React ,{useState, useEffect} from 'react';
+import styles from './App.module.css';
+import MenuBar from './components/MenuBar';
+import QuizContainer from './components/QuizContainer';
+import { db, auth } from "./firebase";
+import { GlobalStyle, Wrapper } from './App.styles';
 
-function App() {
+const App:React.FC = (props:any) => {
+  const [isStart, setIsStart] = useState(false);
+
+  useEffect(() => {
+    const unSub = auth.onAuthStateChanged(user => {
+      !user && props.history.push("/login");
+    });
+    return () => unSub();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <GlobalStyle />
+    <div className={styles.App}>
+      {isStart 
+      ? <div></div>
+      :<MenuBar isStart={isStart} />
+      }
+      <QuizContainer isStart={isStart} setIsStart={setIsStart} />
     </div>
+    </>
   );
 }
 
